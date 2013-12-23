@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>João Vieira - Work</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+	<link rel="shortcut icon" href="favicon.ico" />
+</head>
+<body>
+	<div id="header">
+		<ul>
+			<img class="site-logo" src="favicon.ico" height="26"/>
+			<li><a href="index.html"><span>Home</span></a></li>
+			<li><a href="resume.html"><span>Resumé</span></a></li>
+			<li><a href="thesis.html"><span>Thesis</span></a></li>
+			<li><a href="work.html"><span>Public Work</span></a></li>
+		</ul>
+	</div>
+	<div id="wrapper">
+		<div id="about">
+			<h1>dashboard-bb: Flexible Dashboard for Network Management</h1>
+			<h2>Application prototype for <a href="http://www.jumpin.pt/">Jumpin</a></h2>
+			<h2>Homepage: <a href="http://dashboard-bb.herokuapp.com/">dashboard-bb.herokuapp.com</a></h2>
+			<h2>Github: <a href="https://github.com/joaovieira/dashboard">dashboard</a> and <a href="https://github.com/joaovieira/dashboard-api">dashboard-api</a></h2>
+			<div>
+				<img class="banner" src="images/dashboard.png" alt="dashboard-bb" />
+				<div id="abstract">
+					<p>dashboard-bb is an application prototype implemented for the crowdsourcing project platform Jumpin. It is a dashboard for managing dynamic widgets fed with network data from various input feeds. It is flexible in the extent that it is possible to easily add new widgets, change the data API and visually change the setup as desirable.</p>
+
+					<p>A big part of the application visual design was conceived by PT Inovação, including a Photoshop prototype. I implemented it from scratch using own tools and technologies. It started out as a testbed to learn new modern web languages/technologies such as CoffeeScript, Backbone.js, Yeoman and later MongoDB. The context of dynamic widgets in a frontend app seemed the perfect application for this sort of technology.</p>
+
+					<p>Nevertheless, this project stretches over the whole stack, frontend to backend. The frontend is a single page web application built on top of Backbone.js and Gridster.js. It is structured so that it is independent from the data it pulls from a remote RESTful JSON API, and each widget has its own data and behaviour. In order to optimize coding performance and runtime performance, I used the (terrific) Yeoman tool along with the styling magic of Sass, Compass and Bootstrap.</p>
+
+					<p>The backend and API, while not included in the specification, was simply developed in order to have a functional prototype and simulate a real setup and data. It is built with Ruby on Rails and MongoDB as an example of a perfomant and easy to scale setup.</p>
+				</div>
+			</div>
+		</div>
+		<div class="section">
+			<h2>Front-end</h2>
+			<div class="item">
+				<h3>Application Structure</h3>
+				<div class="description">
+					<p>
+						<span class="sub-title">Backbone.js + Underscore.js</span>
+						<ul>
+							<li>Model the collection of widgets, and each individually</li>
+							<li>Separate control and event handling of each building block: <i>refresh widget once its model is updated</i></li>
+							<li>Rich set of enumerable functions to filter/extract data from collections - courtesy of Underscore.js</li>
+							<li>Widget's position, size and data, persisted into the client's local storage with <strong>backbone.localStorage</strong></li>
+							<li>Categories and widget data fetched from the RESTful JSON API</li>
+							<li>Serialize form data into Backbone models with <strong>bakcbone.Syphon</strong></li>
+							<li>Url routing with <i>pushState</i></li>
+						</ul>
+					</p>
+					<p>
+						<span class="sub-title">CoffeeScript + Eco templates</span>
+						<ul>
+							<li>Backbone + CoffeeScript = just feels right and fun</li>
+							<li>Object orientation keeps widget's base functionality in super class while the specific functionality in sub classes</li>
+							<li>Eco templates render rich views with the cool syntax of CS - Ruby's ERB cousin</li>
+						</ul>
+					</p>
+					<div class="logo-grid">
+						<img class="logo" src="images/logo/backbone.png" title="Backbone.js" alt="Backbone" />
+						<img class="logo" src="images/logo/underscore.png" title="Underscore.js" alt="Underscore" />
+						<img class="logo" src="images/logo/coffeescript.png" title="CoffeeScript" alt="Coffeescript" />
+						<img class="logo" src="images/logo/eco.png" title="Eco templates" alt="Eco" />
+					</div>
+				</div>
+			</div>
+			<div class="item">
+				<h3>Semantic Layout</h3>
+				<div class="description">
+					<p>
+						<span class="sub-title">HTML5 + HTML5 Boilerplate</span>
+						<ul>
+							<li>Fullscreen and Local Storage APIs</li>
+							<li>Better semantics and form inputs</li>
+							<li>Boilerplate template with normalizations and helpers for an adaptable web site</li>
+						</ul>
+					</p>
+					<p>
+						<span class="sub-title">Twitter Bootstrap</span>
+						<ul>
+							<li>Well designed, tried-and-true components: <i>navbar, modal screen, popover, tooltip, tables, tabs, responsive grids and images,...</i></li>
+							<li>Less time designing, more time styling</li>
+							<li>Mobile first, responsive design, cross-platform</li>
+							<li>Flexible, fully customizable and well documented</li>
+							<li>Sass</li>
+						</ul>
+					</p>
+					<div class="logo-grid">
+						<img class="logo" src="images/logo/html5.png" title="HTML5" alt="HTML5" />
+						<img class="logo" src="images/logo/html5bp.png" title="HTML5 Boilerplate" alt="HTML5 Boilerplate" />
+						<img class="logo" src="images/logo/bootstrap.png" title="Bootstrap" alt="Twitter Bootstrap" />
+					</div>
+				</div>
+			</div>	
+			<div class="item">
+				<h3>Styling</h3>
+				<div class="description">
+					<p>
+						<span class="sub-title">CSS3 + Sass + Compass</span>
+						<ul>
+							<li>Gradients, columns, border radiuses, transitions and transforms: <i>card flip effect, custom scroll bars</i></li>
+							<li>Nesting of selectors = "syntactically awesome"!</li>
+							<li>Organize stylesheets with minimal HTTP requests</li>
+							<li>Define and reuse variables</li>
+							<li>Pre-built mixins and helpers</li>
+						</ul>
+					</p>
+					<p>
+						<span class="sub-title">FontAwesome</span>
+						<ul>
+							<li>Minimize use of images</li>
+							<li>Reasonable collection of scalable vector icons</li>
+							<li>Customizable: <i>color, size, rotations and combinations</i></li>
+						</ul>
+					</p>
+					<div class="logo-grid">
+						<img class="logo" src="images/logo/css3.png" title="CSS3" alt="CSS3" />
+						<img class="logo" src="images/logo/sass.png" title="Simply Awesome Stylesheets" alt="Sass" />
+						<img class="logo" src="images/logo/compass.png" title="Compass" alt="Compass" />
+						<img class="logo" src="images/logo/fontawesome.png" title="Font Awesome" alt="Font Awesome" />
+					</div>
+				</div>
+			</div>
+			<div class="item">
+				<h3>Added Functionality</h3>
+				<div class="description">
+					<p>
+						<span class="sub-title">Gridster.js</span>
+						<ul>
+							<li>Wonderfully designed drag & drop block grid that fits perfectly with a widget dashboard</li>
+							<li>Fully customizable: <i>move handler on widget's front face; resize handler on the back</i></li>
+							<li>Event callbacks for resize and reposition used to save dashboard setup</li>
+							<li>jQuery</li>
+						</ul>
+					</p>
+					<p>
+						<span class="sub-title">jQuery</span>
+						<ul>
+							<li>Used all over the app for DOM manipulation and simple animations</li>
+							<li>Seamless integration with Backbone</li>
+						</ul>
+					</p>
+					<p>
+						<span class="sub-title">Graph.js</span>
+						<ul>
+							<li>Minimal, well designed HTML5 graphs with animations</li>
+							<li>Super simple to setup</li>
+							<li>Graph canvas resized on widget resize</li>
+						</ul>
+					</p>
+					<p>
+						<span class="sub-title">html2canvas</span>
+						<ul>
+							<li>Render DOM elements into Base64 images - used to take screenshots of the current dashboard setup</li>
+							<li>Gradient CSS not supported - yet</li>
+						</ul>
+					</p>
+					<div class="logo-grid">
+						<img class="logo" src="images/logo/gridsterjs.png" title="Gridster.js" alt="Gridster.js" />
+						<img class="logo" src="images/logo/jquery.png" title="jQuery" alt="jQuery" />
+						<img class="logo" src="images/logo/chartjs.png" title="Chart.js" alt="Chart.js" />
+						<img class="logo" src="images/logo/html2canvas.png" title="html2canvas" alt="html2canvas" />
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="section">
+			<h2>Back-end</h2>
+			<div class="item">
+				<h3>API</h3>
+				<div class="description">
+					<p>
+						<span class="sub-title">Rails API</span>
+						<ul>
+							<li>Subset of a regular Ruby on Rails 4: <i>no middleware and view templates</i></li>
+							<li>Simply serve data as JSON</li>
+							<li><strong>Action Mailer</strong> for sending HTML emails with screenshot attached</li>
+						</ul>
+					</p>
+					<p>
+						<span class="sub-title">MongoDB + mongoid</span>
+						<ul>
+							<li>NoSQL database for simple and easy modeling of objects</li>
+							<li>Direct repesentation of JSON objects served by the API</li>
+							<li>Highly scalable</li>
+							<li>Mongoid provides Rails-like relations and dynamic queries that are easy to read and understand</li>
+						</ul>
+					</p>
+					<div class="logo-grid">
+						<img class="logo" src="images/logo/rails.png" alt="Ruby On Rails 4" />
+						<img class="logo" src="images/logo/mongodb.png" alt="MongoDB" />
+						<img class="logo" src="images/logo/mongoid.png" alt="Mongoid" />
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="section">
+			<h2>Development and Deployment</h2>
+			<div class="item">
+				<h3>Modern workflow</h3>
+				<div class="description">
+					<p>
+						<span class="sub-title">Yeoman + Grunt + Bower</span>
+						<ul>
+							<li>(Wanted to try Yeoman since its release at Google I/O'12)</li>
+							<li>Life saver by providing all the tools for optimizing app runtime performance and coding time</li>
+							<li>Minimized and concatenated code</li>
+							<li>Watchers and customizable task automation with Grunt</li>
+							<li>Bower's package management provides a huge collection of front-end components while keeping them organized</li>
+						</ul>
+					</p>
+					<div class="logo-grid">
+						<img class="logo" src="images/logo/yeoman.png" alt="Yeoman" />
+						<img class="logo" src="images/logo/grunt.png" alt="Grunt" />
+						<img class="logo" src="images/logo/bower.png" alt="Bower" />
+					</div>
+				</div>
+			</div>	
+			<div class="item">
+				<h3>Publish</h3>
+				<div class="description">
+					<p>
+						<span class="sub-title">Github + Heroku</span>
+						<ul>
+							<li>Code publicly avaiable at Github (first static version of app was also served in Github Pages)</li>
+							<li>Great Rails + Github + Heroku integration: <i>app deployment with a single command</i></li>
+							<li>MongoHQ starter module to serve the MongoDB database in Heroku</li>
+							<li>Sendgrid starter module to handle email service in Heroku</li>
+							<li>Components are well-documented and easily added to Heroku app</li>
+							<li>Free starter plans</li>
+						</ul>
+					</p>
+					<div class="logo-grid">
+						<img class="logo" src="images/logo/github.png" alt="Github" />
+						<img class="logo" src="images/logo/heroku.png" alt="Heroku" />
+						<img class="logo" src="images/logo/mongohq.png" alt="MongoHQ" />
+						<img class="logo" src="images/logo/sendgrid.png" alt="Sendgrid" />
+					</div>
+				</div>
+			</div>	
+		</div>
+
+
+		<div class="section"></div>
+		<div id="about">
+			<h1>PTSense: improving Quality of Experience in Public Transportation</h1>
+			<h2>Master thesis project @ FEUP & Imperial College London </h2>
+			<h2>Homepage: <a href="./thesis.html">PTSense</a></h2>
+			<h2>Github: <a href="https://github.com/joaovieira/PTSense">PTSense</a></h2>
+			<div>
+				<img class="banner" src="images/ptsense.png" alt="ptsense" />
+				<div id="abstract">
+					<p>PTSense is a proof of concept Android application, part of an academic research. It is the front-end of a crowdsourcing sensing framework that collects affective and context data from commuters across the public service network.</p>
+
+					<p>By making inferences over the sensed data and feedback it is possible to create customer profiles and match them against real-time participatory sensing to serve customers better. For instance, routing users to more attractive routes before they need it (eg. less crowded; not necessarily faster). This real-time sensing across the network brings not only benefits to the individual but for everyone using the system.</p>
+
+					<p>This project is fully documented in my <a href="thesis.html">Thesis page</a>, with a brief summary <a href="http://localhost/~dvieira/resume/documents/summary.pdf">here</a>.
+
+					<p>Edit: <a href="http://www.moovitapp.com">Moovit</a> is a new public transit mobile app that already follows this crowdsourcing concept. It allows the share of public transit conditions by the users of the system, in real-time. Nevertheless, our research framework and mobile app would do this in a less pervasive way, using sensors, wearable computing and a stronger machine-learning module in the cloud that could understand and transform the vast sensor data into quality of experience. Even more, predicting the use of public transportation and making personalized route suggestions.</p>
+				</div>
+			</div>
+		</div>
+		<div class="section">
+			<h2>Mobile Application</h2>
+			<div class="item">
+				<h3>Platform</h3>
+				<div class="description">
+					<p>
+						<span class="sub-title">Android + Java + SQlite</span>
+						<ul>
+							<li>Use of smartphone sensors and Android API to access them</i></li>
+							<li>Interact with notifications as the gateway to the app</li>
+							<li>Sensing in a background service, refreshing the UI if visible</li>
+							<li>Store raw data in device's database before sending to server</li>
+							<li>Send data as JSON - sensor data and trip feedback</li>
+							<li>Customizable settings: <i>enable/disable sensors, connect devices, set public tranportation service, and more</i></li>
+							<li>Simple UI: <i>drag & drop sliders</i></li>
+							<li>Backward compatiblity from Android 2.1 to 4.0+ (ICS)</li>
+						</ul>
+					</p>
+					<div class="logo-grid">
+						<img class="logo" src="images/logo/android.png" alt="Android" />
+						<img class="logo" src="images/logo/java.png" alt="Java" />
+						<img class="logo" src="images/logo/sqlite.png" alt="SQLite" />
+					</div>
+				</div>
+			</div>
+			<div class="item">
+				<h3>Interoperability</h3>
+				<div class="description">
+					<p>
+						<span class="sub-title">BLE + Wi-fi</span>
+						<ul>
+							<li>Connect wearables using Bluetoth Low Energy (Bluetooth 4.0) to extract affective data *</li>
+							<li>Make sensor service discoverable with Wi-fi *</li>
+							<li>Start/stop sensing automatically once connection is found/lost *</li>
+							<li>Send trip information to the mobile app *</li>
+							<br/>
+							* Programmed, not implemented
+						</ul>
+					</p>
+					<div class="logo-grid">
+						<img class="logo" src="images/logo/bluetooth.png" alt="Bluetooth Low Energy" />
+						<img class="logo" src="images/logo/wifi.png" alt="Wi-fi" />
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="section">
+			<h2>Development and Deployment</h2>
+			<div class="item">
+				<h3>Development</h3>
+				<div class="description">
+					<p>
+						<span class="sub-title">Eclipse + ADT</span>
+						<ul>
+							<li>Eclipse environment with ADT plugin</li>
+							<li>Test multiple screen sizes and Android versions on  the emulator</li>
+							<li>Debug with ADB on real devices</li>
+							<li>Layout and manifest manager</li>
+						</ul>
+					</p>
+					<div class="logo-grid">
+						<img class="logo" src="images/logo/adt.png" alt="Android Developer Tools" />
+					</div>
+				</div>
+			</div>
+			<div class="item">
+				<h3>Publish</h3>
+				<div class="description">
+					<p>
+						<span class="sub-title">Google Play</span>
+						<ul>
+							<li>Easy publish and fragmentation: <i>two versions, the original for ICS and anoter for older versions with the backward compatibility code<i></li>
+							<li>Receive bug reports</li>
+						</ul>
+					</p>
+					<div class="logo-grid">
+						<img class="logo" src="images/logo/play.png" alt="Google Play" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="footer">
+	</div>
+</body>
+</html>
