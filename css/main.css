@@ -569,8 +569,7 @@ body.small .interest-tag{
 	line-height: 26px;
 	float: left;
 	font-weight: bold;
-	*font-style: italic;
-	font-family: Helvetica, Arial, sans-serif;
+	font-family: 'Helvetica Neue', Arial, sans-serif;
 	position: relative;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
