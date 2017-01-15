@@ -1,3 +1,5 @@
-== Personal homepage
+## Personal homepage
 
-My own garbage collector. Repository for all things me: introduction, resumé, academic research work, last projects, etc.
+#### Moved to [a cooler place](https://joaovieira.me).
+
+The thesis is still maintained here.
